@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Mind Care Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #3d3360 0%, #2a2042 50%, #1e2a42 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(16px); border-radius: 24px; padding: 3rem 2.5rem; width: 100%; max-width: 500px; text-align: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #fff; margin-bottom: 1.5rem; }
+        .logo span { color: #a89fd4; }
+        .welcome { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
+        .welcome em { color: #a89fd4; font-style: italic; }
+        .sub { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 2.5rem; line-height: 1.7; }
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .feature-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.2rem; }
+        .feature-box .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .feature-box p { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+        .btn-home { display: inline-block; padding: 12px 36px; background: #7a6fa8; color: #fff; border-radius: 100px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 500; text-decoration: none; margin-right: 1rem; transition: background 0.3s, transform 0.2s; }
+        .btn-home:hover { background: #6a5f98; transform: translateY(-2px); }
+        .btn-logout { display: inline-block; padding: 12px 36px; background: rgba(220,53,69,0.25); color: #ff8a8a; border: 1px solid rgba(220,53,69,0.4); border-radius: 100px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+        .btn-logout:hover { background: rgba(220,53,69,0.4); transform: translateY(-2px); }
+        .email-text { color: rgba(255,255,255,0.35); font-size: 0.78rem; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo"><span>☽</span> Mind Care Hub</div>
+        <div class="welcome">Welcome, <em id="userName">User</em>!</div>
+        <p class="email-text" id="userEmail"></p>
+        <p class="sub">You are now logged in to Mind Care Hub.<br>Begin your journey to inner peace.</p>
+        <div class="features">
+            <div class="feature-box"><div class="icon">🌬️</div><p>Breathing Exercises</p></div>
+            <div class="feature-box"><div class="icon">🔮</div><p>Guided Meditation</p></div>
+            <div class="feature-box"><div class="icon">🌙</div><p>Better Sleep</p></div>
+            <div class="feature-box"><div class="icon">☮️</div><p>Inner Peace</p></div>
+        </div>
+        <a href="index.html" class="btn-home">Go to Website</a>
+        <a href="#" class="btn-logout" onclick="logout()">Logout</a>
+    </div>
+    <script>
+        const supabase = window.supabase.createClient(
+            'https://cxxmgmpcxgjwykbshgxl.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN4eG1nbXBjeGdqd3lrYnNoZ3hsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxMjQxNzAsImV4cCI6MjA5MjcwMDE3MH0.diH7oc-7Jbm-rkkPQ11fnFn1KmZvlKT7BrIklYEaVI0'
+        );
+        supabase.auth.getSession().then(({ data }) => {
+            if (!data.session) {
+                window.location.href = 'login.html';
+            } else {
+                const user = data.session.user;
+                const name = user.user_metadata?.full_name || user.email.split('@')[0];
+                document.getElementById('userName').textContent = name;
+                document.getElementById('userEmail').textContent = user.email;
+            }
+        });
+        async function logout() {
+            await supabase.auth.signOut();
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
