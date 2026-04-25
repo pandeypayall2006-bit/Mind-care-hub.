@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Care Hub — Find Your Inner Peace</title>
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════════════
+   Mind Care Hub — Stylesheet
+   Aesthetic: Organic serenity · Soft naturalism · Editorial calm
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+        /* ─── Custom Properties ──────────────────────────────────────────────────── */
+        :root {
+            --cream: #f9f5f0;
+            --cream-dark: #f0ebe3;
+            --lavender: #e8e2f0;
+            --lavender-md: #c9bfe6;
+            --sage: #b8cdb8;
+            --sky: #d4e8f0;
+            --sky-deep: #8bbfd4;
+            --blush: #f0dde4;
+            --text-dark: #2c2c34;
+            --text-mid: #5a5867;
+            --text-light: #9896a4;
+            --accent: #7a6fa8;
+            --accent-soft: #a89fd4;
+            --accent-glow: rgba(122, 111, 168, 0.18);
+            --white: #ffffff;
+            --shadow-sm: 0 2px 12px rgba(90, 88, 103, 0.08);
+            --shadow-md: 0 8px 32px rgba(90, 88, 103, 0.12);
+            --shadow-lg: 0 20px 60px rgba(90, 88, 103, 0.16);
+            --radius-sm: 10px;
+            --radius-md: 20px;
+            --radius-lg: 36px;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Poppins', sans-serif;
+            --nav-h: 72px;
+        }
+
+        /* ─── Reset & Base ───────────────────────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ─── Typography helpers ─────────────────────────────────────────────────── */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
+            line-height: 1.15;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        /* ─── Container ──────────────────────────────────────────────────────────── */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ─── Shared Section Helpers ─────────────────────────────────────────────── */
+        .section-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .tag-light {
+            color: var(--lavender-md);
+            background: rgba(200, 191, 230, 0.18);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header.light h2 {
+            color: var(--white);
+        }
+
+        /* ─── Buttons ────────────────────────────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            padding: 14px 32px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(122, 111, 168, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: #6a5f98;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(122, 111, 168, 0.45);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(6px);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   NAVBAR
+   ════════════════════════════════════════════════════════════════════════════ */
+        .nav-toggle-input {
+            display: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-h);
+            z-index: 1000;
+            background: rgba(249, 245, 240, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(200, 191, 230, 0.3);
+            transition: box-shadow 0.3s;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: var(--accent);
+        }
+
+        .logo-light {
+            color: var(--cream);
+        }
+
+        .logo-light:hover {
+            color: var(--lavender-md);
+        }
+
+        .logo-symbol {
+            color: var(--accent);
+            font-size: 1.2em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links li a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            position: relative;
+            padding-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 44, 52, 0.4);
+            z-index: 900;
+            backdrop-filter: blur(2px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: min(320px, 80vw);
+                height: 100dvh;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 2rem;
+                padding: 2rem 3rem;
+                background: var(--cream);
+                box-shadow: var(--shadow-lg);
+                z-index: 1050;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .nav-links li a {
+                font-size: 1rem;
+            }
+
+            .nav-toggle-input:checked~nav .nav-links {
+                right: 0;
+            }
+
+            .nav-toggle-input:checked~.nav-overlay {
+                display: block;
+            }
+
+            /* Animate hamburger → X */
+            .nav-toggle-input:checked~nav .hamburger span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .nav-toggle-input:checked~nav .hamburger span:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            .nav-toggle-input:checked~nav .hamburger span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--nav-h);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=1800&q=85');
+            background-size: cover;
+            background-position: center 30%;
+            transform: scale(1.04);
+            animation: hero-bg-pan 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes hero-bg-pan {
+            from {
+                transform: scale(1.04) translateX(0);
+            }
+
+            to {
+                transform: scale(1.04) translateX(-2%);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(30, 20, 50, 0.68) 0%,
+                    rgba(60, 40, 90, 0.45) 50%,
+                    rgba(20, 40, 60, 0.55) 100%);
+        }
+
+        /* Floating atmospheric orbs */
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: orb-drift 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(168, 159, 212, 0.2);
+            top: 10%;
+            left: -5%;
+            animation-duration: 14s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(139, 191, 212, 0.18);
+            bottom: 15%;
+            right: 10%;
+            animation-duration: 10s;
+            animation-delay: -4s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(240, 221, 228, 0.15);
+            top: 45%;
+            right: 25%;
+            animation-duration: 16s;
+            animation-delay: -8s;
+        }
+
+        @keyframes orb-drift {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            33% {
+                transform: translate(20px, -30px);
+            }
+
+            66% {
+                transform: translate(-15px, 20px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 4rem 0;
+            animation: fade-up 1s ease both;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--lavender-md);
+            margin-bottom: 1rem;
+            animation: fade-up 1s ease 0.15s both;
+        }
+
+        .hero-title {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            animation: fade-up 1s ease 0.25s both;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: fade-up 1s ease 0.35s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            animation: fade-up 1s ease 0.45s both;
+        }
+
+        .hero-scroll-hint {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            animation: fade-up 1s ease 0.6s both;
+        }
+
+        .scroll-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.6);
+                opacity: 0.5;
+            }
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   IMPORTANCE
+   ════════════════════════════════════════════════════════════════════════════ */
+        .importance {
+            padding: 8rem 0;
+            background: var(--cream);
+        }
+
+        .importance-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .importance-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .importance-text p {
+            color: var(--text-mid);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .importance-text .btn {
+            margin-top: 0.8rem;
+        }
+
+        .importance-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle-stack {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            flex-shrink: 0;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            inset: 0;
+        }
+
+        .c-outer {
+            background: var(--lavender);
+            animation: slow-spin 30s linear infinite;
+        }
+
+        .c-mid {
+            inset: 24px;
+            background: var(--sky);
+            animation: slow-spin 22s linear infinite reverse;
+        }
+
+        .c-inner {
+            inset: 48px;
+            background: var(--blush);
+        }
+
+        .importance-img {
+            position: absolute;
+            inset: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        @keyframes slow-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .stat-pill {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 10px 18px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            color: var(--text-mid);
+            box-shadow: var(--shadow-md);
+            z-index: 5;
+            white-space: nowrap;
+        }
+
+        .stat-pill span {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .pill-1 {
+            bottom: 12%;
+            left: -8%;
+        }
+
+        .pill-2 {
+            top: 10%;
+            right: -8%;
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   BENEFITS
+   ════════════════════════════════════════════════════════════════════════════ */
+        .benefits {
+            padding: 8rem 0;
+            background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(200, 191, 230, 0.25);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--lavender-md), var(--sky-deep));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            display: block;
+            line-height: 1;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.875rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+
+        .card-line {
+            margin-top: 1.5rem;
+            height: 1px;
+            background: linear-gradient(90deg, var(--lavender), transparent);
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   PRACTICE
+   ════════════════════════════════════════════════════════════════════════════ */
+        .practice {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #3d3360 0%, #2a2042 50%, #1e2a42 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .practice::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(ellipse at 20% 80%, rgba(168, 159, 212, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(139, 191, 212, 0.1) 0%, transparent 60%);
+        }
+
+        .practice .section-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .practice-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .practice-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem 2rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+
+        .practice-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+            border-color: rgba(200, 191, 230, 0.3);
+        }
+
+        .practice-num {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: rgba(200, 191, 230, 0.2);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .practice-img-wrap {
+            height: 180px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .practice-card h3 {
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .practice-card p {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   GALLERY
+   ════════════════════════════════════════════════════════════════════════════ */
+        .gallery {
+            padding: 8rem 0;
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 260px 260px;
+            gap: 1rem;
+        }
+
+        .gi-tall {
+            grid-row: span 2;
+        }
+
+        .gi-wide {
+            grid-column: span 2;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(44, 44, 52, 0.7) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            font-family: var(--font-display);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   ABOUT
+   ════════════════════════════════════════════════════════════════════════════ */
+        .about {
+            padding: 8rem 0;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--lavender) 100%);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+            height: 520px;
+        }
+
+        .about-img-main {
+            position: absolute;
+            width: 72%;
+            height: 440px;
+            top: 0;
+            left: 0;
+            border-radius: var(--radius-lg);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-img-secondary {
+            position: absolute;
+            width: 46%;
+            height: 260px;
+            bottom: 0;
+            right: 0;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 6px solid var(--cream);
+        }
+
+        .about-badge {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -20px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+        }
+
+        .badge-years {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .badge-label {
+            font-size: 0.7rem;
+            opacity: 0.85;
+            line-height: 1.4;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-mid);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-values {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-mid);
+        }
+
+        .value-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   CONTACT
+   ════════════════════════════════════════════════════════════════════════════ */
+        .contact {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #2a2042 0%, #1e3550 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 159, 212, 0.1) 0%, transparent 70%);
+            top: -200px;
+            left: -200px;
+        }
+
+        .contact-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+        }
+
+        .cd-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(200, 191, 230, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--cream);
+            outline: none;
+            transition: border-color 0.3s, background 0.3s;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-soft);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════════════════════ */
+        .footer {
+            background: #16111f;
+            padding-top: 5rem;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            margin-bottom: 1.8rem;
+            max-width: 260px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.07);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-links-group h4 {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 1.4rem;
+        }
+
+        .footer-links-group ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links-group ul li a {
+            font-size: 0.87rem;
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.3s;
+        }
+
+        .footer-links-group ul li a:hover {
+            color: var(--cream);
+        }
+
+        .footer-bottom {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+
+        /* ════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════════════════════════════════════════════ */
+
+        /* ── Tablet ─────────────────────────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .importance-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .importance-visual {
+                justify-content: flex-start;
+            }
+
+            .circle-stack {
+                width: 300px;
+                height: 300px;
+            }
+
+            .pill-1 {
+                left: 0;
+            }
+
+            .pill-2 {
+                right: 0;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-images {
+                height: 400px;
+                order: -1;
+            }
+
+            .about-img-main {
+                width: 68%;
+                height: 360px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .practice-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* ── Mobile ─────────────────────────────────────────────────────────────── */
+        @media (max-width: 640px) {
+            :root {
+                --nav-h: 60px;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+            }
+
+            .gi-tall,
+            .gi-wide {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .gallery-item {
+                height: 240px;
+            }
+
+            .about-images {
+                height: 320px;
+            }
+
+            .about-img-main {
+                width: 80%;
+                height: 280px;
+            }
+
+            .about-img-secondary {
+                width: 50%;
+                height: 180px;
+            }
+
+            .about-badge {
+                right: -5px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+
+            .circle-stack {
+                width: 260px;
+                height: 260px;
+            }
+        }
+
+        /* ── Small phones ───────────────────────────────────────────────────────── */
+        @media (max-width: 400px) {
+            .container {
+                width: 94%;
+            }
+
+            .btn {
+                padding: 12px 22px;
+                font-size: 0.8rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-symbol">☽</span> Mind Care Hub
+            </a>
+            <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#importance">Benefits</a></li>
+                <li><a href="#practice">Practice</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <label for="nav-toggle" class="nav-overlay"></label>
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+        <div class="container hero-content">
+            <p class="hero-eyebrow">Begin your journey</p>
+            <h1 class="hero-title">Find Your<br /><em>Inner Peace</em></h1>
+            <p class="hero-sub">
+                Meditation helps you relax, focus, and live a better life.<br />
+                Breathe. Be present. Be still.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#practice" class="btn btn-primary">Start Meditating</a>
+                <a href="#importance" class="btn btn-ghost">Learn More</a>
+            </div>
+            <div class="hero-scroll-hint">
+                <span class="scroll-dot"></span>
+                <span>Scroll to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════════════════ WHY MEDITATION MATTERS ════════════════════════ -->
+    <section class="importance" id="importance">
+        <div class="container importance-inner">
+            <div class="importance-text">
+                <span class="section-tag">Why it Matters</span>
+                <h2>Why Meditation<br /><em>Transforms Lives</em></h2>
+                <p>
+                    In the rush of modern life, our minds rarely find stillness. Meditation
+                    offers a proven path to mental clarity, emotional resilience, and deeper
+                    self-understanding. Just minutes a day can rewire stress patterns, sharpen
+                    focus, and restore a sense of inner calm that carries you through every
+                    challenge.
+                </p>
+                <p>
+                    Science confirms what ancient traditions have long known — a regular
+                    practice lowers cortisol, improves sleep quality, and cultivates the
+                    compassion and presence that make life genuinely richer.
+                </p>
+                <a href="#benefits" class="btn btn-outline">Explore Benefits →</a>
+            </div>
+            <div class="importance-visual">
+                <div class="circle-stack">
+                    <div class="circle c-outer"></div>
+                    <div class="circle c-mid"></div>
+                    <div class="circle c-inner"></div>
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
+                        alt="Peaceful meditation" class="importance-img" />
+                </div>
+                <div class="stat-pill pill-1"><span>83%</span> stress reduction</div>
+                <div class="stat-pill pill-2"><span>2×</span> better focus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════ BENEFITS ═══════════════════════════════ -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What you gain</span>
+                <h2>The Gifts of a<br /><em>Daily Practice</em></h2>
+            </div>
+            <div class="benefits-grid">
+
+                <article class="benefit-card">
+                    <div class="card-icon">🌬️</div>
+                    <h3>Reduces Stress</h3>
+                    <p>Lower cortisol and quiet the nervous system — feel noticeably calmer within weeks.</p>
+                    <div class="card-line"></div>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="card-icon">🔮</div>
+                    <h3>Improves Focus</h3>
+                    <p>Train attention like a muscle. Clarity, productivity, and mental sharpness all improve.</p>
+                    <div class="card-line"></div>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="card-icon">🌙</div>
+                    <h3>Better Sleep</h3>
+                    <p>Calm the racing mind at bedtime. Fall asleep faster and wake up truly rested.</p>
+                    <div class="card-line"></div>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="card-icon">💛</div>
+                    <h3>Emotional Health</h3>
+                    <p>Build compassion, reduce anxiety, and find a steadier relationship with your feelings.</p>
+                    <div class="card-line"></div>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="card-icon">🪞</div>
+                    <h3>Self Awareness</h3>
+                    <p>Understand your own patterns, triggers, and deeper motivations with honest clarity.</p>
+                    <div class="card-line"></div>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="card-icon">☮️</div>
+                    <h3>Inner Peace</h3>
+                    <p>A quiet, steady contentment that doesn't depend on external circumstances.</p>
+                    <div class="card-line"></div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════ PRACTICE ═══════════════════════════════ -->
+    <section class="practice" id="practice">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag tag-light">What you can do</span>
+                <h2>Start Your<br /><em>Practice Today</em></h2>
+            </div>
+            <div class="practice-grid">
+
+                <div class="practice-card">
+                    <div class="practice-num">01</div>
+                    <div class="practice-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=500&q=80"
+                            alt="Breathing exercises" />
+                    </div>
+                    <h3>Breathing Exercises</h3>
+                    <p>Anchor yourself in the present with guided breathwork — from box breathing to 4-7-8 technique.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-num">02</div>
+                    <div class="practice-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=500&q=80"
+                            alt="Guided meditation" />
+                    </div>
+                    <h3>Guided Meditation</h3>
+                    <p>Follow soothing voice-led sessions designed for beginners, deep rest, or focused clarity.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-num">03</div>
+                    <div class="practice-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=500&q=80"
+                            alt="Yoga and meditation" />
+                    </div>
+                    <h3>Yoga + Meditation</h3>
+                    <p>Unite body and mind with gentle movement flows followed by seated stillness.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-num">04</div>
+                    <div class="practice-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?w=500&q=80"
+                            alt="Mindfulness practice" />
+                    </div>
+                    <h3>Mindfulness Practice</h3>
+                    <p>Bring non-judgmental awareness to everyday moments — eating, walking, listening.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ IMAGE GALLERY ════════════════════════════ -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Spaces of stillness</span>
+                <h2>Find Your<br /><em>Sacred Space</em></h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item gi-tall">
+                    <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=800&q=80"
+                        alt="Mountain meditation" />
+                    <div class="gallery-overlay"><span>Mountain Stillness</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoB7L9DDLIXkHtA3QANHQ8ReX-rbaBZK5DOQ&s"
+                        alt="Forest yoga" />
+                    <div class="gallery-overlay"><span>Forest Yoga</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://freerangestock.com/sample/38730/meditation-at-sunset.jpg"
+                        alt="Sunrise meditation" />
+                    <div class="gallery-overlay"><span>Sunrise Ritual</span></div>
+                </div>
+                <div class="gallery-item gi-wide">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
+                        alt="Peaceful nature" />
+                    <div class="gallery-overlay"><span>Peaceful Waters</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80"
+                        alt="Zen garden" />
+                    <div class="gallery-overlay"><span>Zen Garden</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80"
+                        alt="Mountain peace" />
+                    <div class="gallery-overlay"><span>Alpine Calm</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMA_m6yhwqOL7taFmGRZCXfF8MU26iYJEOnQ&s"
+                        alt="Mountain peace" />
+                    <div class="gallery-overlay"><span>Mountain peace</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════ ABOUT ════════════════════════════════ -->
+    <section class="about" id="about">
+        <div class="container about-inner">
+            <div class="about-images">
+                <img src="https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=600&q=80"
+                    alt="Meditation lifestyle" class="about-img-main" />
+                <img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?w=400&q=80"
+                    alt="Mindful living" class="about-img-secondary" />
+                <div class="about-badge">
+                    <span class="badge-years">10+</span>
+                    <span class="badge-label">Years of<br />Practice</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="section-tag">Our story</span>
+                <h2>A Life Lived<br /><em>Mindfully</em></h2>
+                <p>
+                    Mind Care Hub was born from a simple belief: that every human being
+                    deserves access to the ancient tools of stillness, clarity, and
+                    compassion — regardless of background, belief, or experience.
+                </p>
+                <p>
+                    We blend timeless meditation traditions with the understanding of
+                    modern neuroscience to offer practices that are accessible, evidence-backed,
+                    and genuinely transformative. Whether you have five minutes or fifty, there
+                    is a practice here that meets you exactly where you are.
+                </p>
+                <div class="about-values">
+                    <div class="value-item">
+                        <div class="value-dot"></div>
+                        <span>Accessible to everyone</span>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-dot"></div>
+                        <span>Science-informed approach</span>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-dot"></div>
+                        <span>Rooted in tradition</span>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-dot"></div>
+                        <span>Community & connection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════════════════════════ CONTACT ═══════════════════════════════ -->
+    <section class="contact" id="contact">
+        <div class="container contact-inner">
+            <div class="contact-info">
+                <span class="section-tag tag-light">Get in touch</span>
+                <h2>Begin Your<br /><em>Journey With Us</em></h2>
+                <p>
+                    Have a question, want to collaborate, or simply need guidance on
+                    where to start? We'd love to hear from you. Drop us a message and
+                    we'll respond within 24 hours.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <span class="cd-icon">✉</span>
+                        <span>hello@mindcarehub.co</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <span class="cd-icon">☎</span>
+                        <span>+1 (800) 555-CALM</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <span class="cd-icon">⌖</span>
+                        <span>Retreat Center, Rishikesh, India</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" action="#" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Share what's on your mind…"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Send Message ✦</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="#home" class="logo logo-light">
+                    <span class="logo-symbol">☽</span> Mind Care Hub
+                </a>
+                <p>A sanctuary for stillness in a noisy world.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Twitter">TW</a>
+                    <a href="#" class="social-link" aria-label="YouTube">YT</a>
+                    <a href="#" class="social-link" aria-label="Pinterest">PT</a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#importance">Why Meditate</a></li>
+                    <li><a href="#practice">Practice</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>Practice</h4>
+                <ul>
+                    <li><a href="#practice">Breathing</a></li>
+                    <li><a href="#practice">Guided Sessions</a></li>
+                    <li><a href="#practice">Yoga + Meditation</a></li>
+                    <li><a href="#practice">Mindfulness</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Mind Care Hub. Crafted with ☽ for seekers everywhere.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
